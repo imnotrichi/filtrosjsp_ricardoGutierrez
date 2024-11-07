@@ -43,13 +43,13 @@ public class RegistrarPokemon extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/home.jsp";
+        String url = "";
         String action = request.getParameter("action");
-        
+
         if (action == null) {
             action = "RegistrarPokemon"; //default action
         }
-        
+
         if (action.equals("RegistrarPokemon")) {
             String numeroPokedex = request.getParameter("numero-pokedex");
             String nombrePokemon = request.getParameter("nombre-pokemon");
@@ -57,24 +57,31 @@ public class RegistrarPokemon extends HttpServlet {
             String nivelEvolucion = request.getParameter("nivel-evolucion");
             Integer nivelPoder = Integer.valueOf(request.getParameter("nivel-poder"));
             String descripcion = request.getParameter("descripcion");
-            
-            Pokemon pokemon = new Pokemon(numeroPokedex, nombrePokemon, tipo, nivelEvolucion, nivelPoder, descripcion);
-            
-            HttpSession sesion = request.getSession();
-            List<Pokemon> pokedex = (List<Pokemon>) sesion.getAttribute("pokedex");
-            
-            if (pokedex == null) {
-                pokedex = new LinkedList<>();
-                sesion.setAttribute("pokedex", pokedex);
-            }
-            
-            if (pokedex.indexOf(pokemon) < 0) {
-                pokedex.add(pokemon);
-                System.out.println("POKEMON REGISTRADO");
-                request.setAttribute("pokemon", pokemon);
+
+            if (!numeroPokedex.isBlank() && !nombrePokemon.isBlank() && !tipo.isBlank()
+                    && !nivelEvolucion.isBlank() && nivelPoder >= 1 && nivelPoder <= 100
+                    && !descripcion.isBlank()) {
+                url = "/home.jsp";
+                Pokemon pokemon = new Pokemon(numeroPokedex, nombrePokemon, tipo, nivelEvolucion, nivelPoder, descripcion);
+
+                HttpSession sesion = request.getSession();
+                List<Pokemon> pokedex = (List<Pokemon>) sesion.getAttribute("pokedex");
+
+                if (pokedex == null) {
+                    pokedex = new LinkedList<>();
+                    sesion.setAttribute("pokedex", pokedex);
+                }
+
+                if (pokedex.indexOf(pokemon) < 0) {
+                    pokedex.add(pokemon);
+                    System.out.println("POKEMON REGISTRADO");
+                    request.setAttribute("pokemon", pokemon);
+                }
+            } else {
+                url = "/registrar-pokemon.jsp";
             }
         }
-        
+
         this.getServletContext().getRequestDispatcher(url).forward(request, response);
     }
 
