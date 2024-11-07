@@ -65,12 +65,14 @@ public class RegistrarPokemon extends HttpServlet {
             
             if (pokedex == null) {
                 pokedex = new LinkedList<>();
+                sesion.setAttribute("pokedex", pokedex);
             }
             
-            pokedex.add(pokemon);
-            
-            System.out.println("POKEMON REGISTRADO");
-            request.setAttribute("pokemon", pokemon);
+            if (pokedex.indexOf(pokemon) < 0) {
+                pokedex.add(pokemon);
+                System.out.println("POKEMON REGISTRADO");
+                request.setAttribute("pokemon", pokemon);
+            }
         }
         
         this.getServletContext().getRequestDispatcher(url).forward(request, response);

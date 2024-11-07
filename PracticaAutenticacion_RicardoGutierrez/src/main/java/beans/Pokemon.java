@@ -4,6 +4,7 @@
 package beans;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * @author RicardoGutierrez
@@ -75,6 +76,28 @@ public class Pokemon implements Serializable {
 
     public void setDescripcionPokedex(String descripcionPokedex) {
         this.descripcionPokedex = descripcionPokedex;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 19 * hash + Objects.hashCode(this.numeroPokedex);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pokemon other = (Pokemon) obj;
+        return Objects.equals(this.numeroPokedex, other.numeroPokedex);
     }
 
 }

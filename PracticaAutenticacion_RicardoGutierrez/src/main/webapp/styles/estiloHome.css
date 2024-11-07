@@ -1,9 +1,83 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
 /* 
     Created on : 7 nov 2024, 11:31:59
-    Author     : ricar
+    Author     : RicardoGutierrez
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: 'Montserrat';
+}
+
+body {
+    background-color: #000B58;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #E2D692;
+    color: #006A67;
+    width: 37rem;
+    height: 4rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem 1rem 0rem 0rem;
+    margin-bottom: 0rem;
+}
+
+nav {
+    background-color: #e6d573;
+    color: #006A67;
+    width: 37rem;
+    height: 4rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 0rem;
+}
+
+nav a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: red;
+}
+
+main {
+    background-color: #FFF4B7;
+    width: 35rem;
+    height: 31rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+table, th, td {
+    border: solid 2px;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #006A67;
+    color: white;
+    border-color: #FFF4B7;
+}
+
+td {
+    text-align: center;
+    background-color: #F6FCDF;
+    border-color: #FFF4B7;
+}
+
 

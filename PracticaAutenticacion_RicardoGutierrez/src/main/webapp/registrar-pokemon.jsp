@@ -45,8 +45,8 @@
                         <label for="nivel-evolucion">Nivel de Evolución:</label>
                         <select name="nivel-evolucion" id="nivel-evolucion">
                             <option value="basico" selected>Basico</option>
-                            <option value="primera-evolucion">Primera Evolución</option>
-                            <option value="segunda-evolucion">Segunda Evolución</option>
+                            <option value="primera evolucion">Primera Evolución</option>
+                            <option value="segunda evolucion">Segunda Evolución</option>
                         </select>
                     </div>
 

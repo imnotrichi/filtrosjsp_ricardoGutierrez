@@ -5,10 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!--
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
--->
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,12 +23,10 @@
             <a href="registrar-pokemon.jsp">Registrar Prokémon</a>
             <a href="mi-perfil.jsp">Mi Perfil</a>
         </nav>
-<!--
         <main>
             <h2>Pokemon Registrados: ${fn:length(sessionScope.pokedex)}</h2>
             <section>
-                <table border="1">
-
+                <table>
                     <tr>
                         <th rowspan="1">ID</th>
                         <th rowspan="1">Nombre</th>
@@ -53,9 +49,5 @@
                 </table>
             </section>
         </main>
--->
-        <footer>
-            <p>Ricardo Gutiérrez, 2024. Todos los derechos reservados.</p>
-        </footer>
     </body>
 </html>
