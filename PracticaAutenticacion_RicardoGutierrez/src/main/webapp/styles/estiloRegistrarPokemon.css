@@ -1,0 +1,83 @@
+/* 
+    Created on : 7 nov 2024, 10:59:13
+    Author     : RicardoGutierrez
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: 'Montserrat';
+}
+
+body {
+    background-color: #000B58;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #E2D692;
+    color: #006A67;
+    width: 37rem;
+    height: 4rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem 1rem 0rem 0rem;
+    margin-bottom: 0rem;
+}
+
+main {
+    background-color: #FFF4B7;
+    width: 35rem;
+    height: 31rem;
+    border-radius: 0rem 0rem 1rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+input[type=text], 
+input[type=number],
+select{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #FEFEFE;
+}
+
+textarea {
+    font-weight: 500;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #FEFEFE;
+}
+
+input[type=submit],
+input[type=reset]{
+    background-color: #006A67;
+    color: #FEFEFE;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 11rem;
+    height: 2rem;
+    border: none;
+    border-radius: 0.5rem;
+}
