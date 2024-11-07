@@ -17,6 +17,9 @@ public class Pokemon implements Serializable {
     private Integer nivelPoder;
     private String descripcionPokedex;
 
+    public Pokemon() {
+    }
+
     public Pokemon(String numeroPokedex, String nombre, String tipo, String nivelEvolucion, Integer nivelPoder, String descripcionPokedex) {
         this.numeroPokedex = numeroPokedex;
         this.nombre = nombre;
